@@ -10,12 +10,16 @@
 			height: 600px;
 			margin-bottom: 50px;
 		}
+		/* 可以通过 CSS 隐藏占位符 */
+		.lazy{
+			display: none;
+		}
 	</style>
 	<script type="text/javascript" src="js/jquery.lazyload.js"></script>
 	<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('img').lazyload({
+			$('img.lazy').show().lazyload({
 				placeholder: "img/loading.gif",
 				effect: "fadeIn"
 			});
@@ -23,15 +27,25 @@
 	</script>
 </head>
 <body>
-	<img src="img/1.jpg">
-	<img src="img/2.jpg">
-	<img src="img/3.jpg">
-	<img src="img/4.jpg">
-	<img src="img/5.jpg">
-	<img src="img/6.jpg">
-	<img src="img/7.jpg">
-	<img src="img/8.jpg">
-	<img src="img/9.jpg">
-	<img src="img/10.jpg">
+	<img class="lazy" data-original="img/1.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>  <!-- 当浏览器不支持 JavaScript 时优雅降级 -->
+	<img class="lazy" data-original="img/2.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/3.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/4.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/5.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/6.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/7.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/8.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/9.jpg">
+		<noscript><img src="img/img/1.jpg"></noscript>
+	<img class="lazy" data-original="img/10.jpg">
+		<noscript><img src="img/img/1.jpg" ></noscript>
 </body>
 </html>
